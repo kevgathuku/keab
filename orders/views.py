@@ -14,6 +14,11 @@ def order_new(request):
             messages.add_message(request, messages.SUCCESS,
                                  'Order Succesfully Saved')
             return HttpResponseRedirect('/order/new')
+        else:
+            form = OrderForm()
+            messages.add_message(request, messages.ERROR,
+                                 'Ooops, an Error Occurred!')
+            return render(request, 'orders.html', {'form': form})
     else:
         form = OrderForm()
         return render(request, 'orders.html', {'form': form})
