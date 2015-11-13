@@ -11,4 +11,4 @@ class Order(models.Model):
     name = models.CharField(max_length=200)
     order = models.TextField()
     buyer = models.ForeignKey(Buyer)
-    crops = models.ManyToManyField(Crop)
+    crops = models.ForeignKey(Crop)
