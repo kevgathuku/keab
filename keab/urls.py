@@ -16,12 +16,14 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls import include, patterns, url
 from django.contrib import admin
+from orders import views
 
 from farmer.views import HomePageView
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', HomePageView.as_view(), name='home'),
+    url(r'^order/new/$', views.order_new, name='order_new'),
 ]
 
 if not settings.DEBUG:
