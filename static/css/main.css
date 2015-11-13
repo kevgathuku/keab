@@ -1,0 +1,52 @@
+.carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+}
+
+.carousel-caption h3 {
+  color: #fff !important;
+}
+@media (max-width: 600px) {
+    .carousel-caption {
+        display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+}
+
+.clean-main-menu{
+    background-color: #28292e;
+    background-color: transparent;
+    color: white;
+    border: 0 none;
+    border-radius: 0;
+    position: fixed;
+    width: 100%;
+    padding: 15px 0;
+    margin-bottom: 0;
+    z-index: 10;
+    -webkit-transition: all .35s;
+       -moz-transition: all .35s;
+        -ms-transition: all .35s;
+         -o-transition: all .35s;
+            transition: all .35s;
+}
+
+.clean-main-menu .navbar-nav li a {
+    color: white;
+}
+
+.navbar-brand a{
+    color: white;
+}
+
+.main-header h3{
+    padding: 5% 0;
+    text-align: center;
+}
+
+.facts {
+    text-align: center;
+}
+
+.bottom {
+    padding-bottom: 10%;
+}

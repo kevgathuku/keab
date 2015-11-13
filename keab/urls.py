@@ -17,8 +17,11 @@ from django.conf import settings
 from django.conf.urls import include, patterns, url
 from django.contrib import admin
 
+from farmer.views import HomePageView
+
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^$', HomePageView.as_view(), name='home'),
 ]
 
 if not settings.DEBUG:
