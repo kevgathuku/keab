@@ -25,8 +25,12 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            {% if request.user.is_authenticated %}
+              <li><a href="{% url 'auth_logout' %}">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'registration_register' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="{% url 'auth_login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            {% endif %}
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -81,6 +85,9 @@
   <div class="container">
     <div class="main-header">
       <h3>CONNECTING BUYERS AND FARMERS</h3>
+      <div class="order">
+        <h3 class="order"><a href="/order/new">ORDER NOW</a></h3>
+      </div>
     </div>
       <div class="row">
         <div class="col-md-4 facts">

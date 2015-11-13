@@ -42,11 +42,13 @@ DJANGO_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 )
 
 THIRD_PARTY_APPS = (
     'django_extensions',
     'crispy_forms',
+    'registration',
 )
 
 LOCAL_APPS = (
@@ -134,3 +136,9 @@ STATIC_URL = '/static/'
 
 # Where static files are collected
 STATIC_ROOT = 'staticfiles'
+
+ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window; you may, of course, use a different value.
+REGISTRATION_AUTO_LOGIN = True # Automatically log the user in.
+
+SITE_ID = 1
+LOGIN_REDIRECT_URL = '/order/new/'
