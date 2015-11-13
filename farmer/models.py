@@ -9,6 +9,9 @@ class Crop(models.Model):
     # max_digits = total digits in the number, including decimals
     price = models.DecimalField(max_digits=7, decimal_places=2)
 
+    def __unicode__(self):
+        return self.name
+
 
 class Farmer(models.Model):
     name = models.CharField(max_length=100)
@@ -18,6 +21,9 @@ class Farmer(models.Model):
     farm_size = models.CharField(max_length=200)
     crops = models.ManyToManyField(Crop)
 
+    def __unicode__(self):
+        return self.name
+
 
 class Recommendation(models.Model):
     farmer = models.ForeignKey(Farmer)
@@ -25,3 +31,5 @@ class Recommendation(models.Model):
     duration_passed = models.DurationField()
     text = models.TextField()
 
+    def __unicode__(self):
+        return "Farmer: {}, Crop: {}>".format(self.farmer.name, self.crop.name)
