@@ -19,7 +19,6 @@ class Farmer(models.Model):
     id_number = models.IntegerField()
     phone_number = models.IntegerField()
     farm_size = models.CharField(max_length=200)
-    crops = models.ManyToManyField(Crop)
 
     def __unicode__(self):
         return self.name
