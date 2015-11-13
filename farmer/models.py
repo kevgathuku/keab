@@ -28,4 +28,8 @@ class Recommendation(models.Model):
 
 class Buyer(models.Model):
     name = models.CharField(max_length=100)
+
+
+class Order(models.Model):
+    buyer = models.ForeignKey(Buyer)
     crops = models.ManyToManyField(Crop)
