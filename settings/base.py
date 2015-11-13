@@ -116,7 +116,3 @@ STATIC_URL = '/static/'
 
 # Where static files are collected
 STATIC_ROOT = 'staticfiles'
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
