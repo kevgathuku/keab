@@ -47,6 +47,7 @@ DJANGO_APPS = (
 
 THIRD_PARTY_APPS = (
     'django_extensions',
+    'djrill',
     'crispy_forms',
     'registration',
 )
@@ -142,3 +143,7 @@ REGISTRATION_AUTO_LOGIN = True # Automatically log the user in.
 
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/order/new/'
+
+MANDRILL_API_KEY = "rTml9AVgBL3ac-l0hSzEzQ"
+EMAIL_BACKEND = "djrill.mail.backends.djrill.DjrillBackend"
+DEFAULT_FROM_EMAIL = "kevgathuku@gmail.com"  # if you don't already have this in settings
